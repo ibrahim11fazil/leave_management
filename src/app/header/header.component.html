@@ -1,0 +1,51 @@
+
+<!-- <form  #headerForm="ngForm"   (ngSubmit)="useLanguage(headerForm.value)" class="example-form"> -->
+<!-- <div   [ngClass]="'currentTheme' | translate">
+  {{'currentTheme' | translate}} -->
+
+<mat-toolbar color="primary" dir="{{textDir}}">
+  <mat-toolbar-row>
+    
+    <h1> &nbsp; {{'leaveManagementSystem' | translate}} &nbsp;</h1>
+    
+    <!-- <div> <label class="prfLabel"> empId : {{empId}}</label> 
+    <label class="prfLabel" >empName : {{empName}}</label></div> --> 
+    <!-- *ngIf="textDir==='rtl'" -->
+ <div>
+    <!-- <a   [routerLink]="" class="prfLabel" type="submit"  *ngIf="currLang==='ar'" (click)="useLanguage('en')">(English)</a>
+    <a [routerLink]="" class="prfLabel" type="submit" *ngIf="currLang==='en'" (click)="useLanguage('ar')"> -->
+      <!-- <a   [routerLink]="" class="prfLabel" type="submit"  *ngIf="textDir==='rtl'" (click)="useLanguage('en')">(English)</a>
+    <a [routerLink]="" class="prfLabel" type="submit" *ngIf="textDir==='ltr'" (click)="useLanguage('ar')"> -->
+      <a   [routerLink]="" class="prfLabel" type="submit"  *ngIf="textDir==='rtl'" (click)="useLanguage('en')">(English)</a>
+    <a [routerLink]="" class="prfLabel" type="submit" *ngIf="textDir==='ltr'" (click)="useLanguage('ar')">
+      (العربية)</a>
+    </div>
+  </mat-toolbar-row>
+   
+</mat-toolbar>
+
+<mat-sidenav-container dir="{{textDir}}"> 
+  <mat-sidenav mode="side" class="sideNavStyle" opened>
+    <mat-nav-list >  
+      <div class="navstyle"><button mat-button class="my-class"  *ngIf="isEmployee || isManager || isAdmin " routerLinkActive="active-list-item" [routerLink]="'/employeeLeave'" > {{'leaveRequest'|translate}} </button></div>
+      <div class="navstyle"> <button mat-button class="my-class" *ngIf="isAdmin" routerLinkActive="active-list-item" [routerLink]="'/admin'"  > {{'addRoles'|translate}}  </button></div>
+      <div class="navstyle"> <button mat-button class="my-class" *ngIf="isManager" routerLinkActive="active-list-item" [routerLink]="'/manage'"   > {{'generateReport'|translate}}  </button>  </div>
+      <div class="navstyle"> <button mat-button class="my-class" *ngIf="isAdmin" routerLinkActive="active-list-item" [routerLink]="'/register'"   > {{'registerEmployee'|translate}} </button>  </div>
+      <!-- <div> <button mat-button *ngIf="isNoRole" routerLinkActive="active-list-item" [routerLink]="'/norole'"   > Leave Details </button>  </div>  -->
+      <div class="logalign" >
+        <button  mat-button  class="loginbtnStyle" (click)="onLogout()">{{'logout'|translate}} </button>
+      </div>
+      <div> 
+     
+        
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="height: 88vh;"> 
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>  
+<!-- </div> -->
+<!-- </form> -->

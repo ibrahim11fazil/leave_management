@@ -1,0 +1,30 @@
+
+        th.mat-header-cell {
+            text-align: center !important;
+            padding-left: 10px;
+            padding-right: 10px; 
+        }
+        
+        .mat-cell { 
+            text-align: center !important;
+            padding-left: 50px;
+            padding-right: 50px; 
+        }
+
+
+        .spinner-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .labelstyle{
+            color: white;
+            margin:20px;
+            margin-left:0px;
+            background-color: #673ab7;
+            padding:10px; 
+            font-family: Roboto, "Helvetica Neue", sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+        }

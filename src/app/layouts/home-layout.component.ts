@@ -2,15 +2,17 @@ import { Component } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-home-layout',
+  template: `
+    <app-header></app-header>
+  `
+  // <router-outlet></router-outlet>
+  ,
+  styles: []
 })
-export class AppComponent {
-  title = 'leave-management';
-  // textDir: string = 'rtl';
-  // roles:String 
+export class HomeLayoutComponent {
   constructor(private translate: TranslateService){
+    console.log(" HOME LAYOUT INVOKED");
     translate.setDefaultLang('en');
     this.translate.onLangChange.subscribe((event: LangChangeEvent) =>
     {
@@ -26,9 +28,10 @@ export class AppComponent {
         this.translate.use('en')
       }
     });
-    //   this.roles= sessionStorage.getItem('role');
-    // if(this.roles==="ADM"){
-
-    // }
   }
+
+  ngOnInit() {
+    console.log(" HOME LAYOUT INVOKED");
+  }
+
 }
